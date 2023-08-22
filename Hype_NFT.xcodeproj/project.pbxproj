@@ -9,19 +9,21 @@
 /* Begin PBXBuildFile section */
 		E2A946852A950F95005CF04E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A946842A950F95005CF04E /* AppDelegate.swift */; };
 		E2A946872A950F95005CF04E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A946862A950F95005CF04E /* SceneDelegate.swift */; };
-		E2A946892A950F95005CF04E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A946882A950F95005CF04E /* ViewController.swift */; };
+		E2A946892A950F95005CF04E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A946882A950F95005CF04E /* LoginViewController.swift */; };
 		E2A9468E2A950F96005CF04E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A9468D2A950F96005CF04E /* Assets.xcassets */; };
 		E2A946912A950F96005CF04E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A9468F2A950F96005CF04E /* LaunchScreen.storyboard */; };
+		E2A9469A2A952DAE005CF04E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A946992A952DAE005CF04E /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E2A946812A950F95005CF04E /* Hype_NFT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hype_NFT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A946842A950F95005CF04E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A946862A950F95005CF04E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E2A946882A950F95005CF04E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E2A946882A950F95005CF04E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E2A9468D2A950F96005CF04E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2A946902A950F96005CF04E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2A946922A950F96005CF04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2A946992A952DAE005CF04E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		E2A946832A950F95005CF04E /* Hype_NFT */ = {
 			isa = PBXGroup;
 			children = (
+				E2A946982A952D97005CF04E /* Login */,
 				E2A946842A950F95005CF04E /* AppDelegate.swift */,
 				E2A946862A950F95005CF04E /* SceneDelegate.swift */,
-				E2A946882A950F95005CF04E /* ViewController.swift */,
 				E2A9468D2A950F96005CF04E /* Assets.xcassets */,
 				E2A9468F2A950F96005CF04E /* LaunchScreen.storyboard */,
 				E2A946922A950F96005CF04E /* Info.plist */,
 			);
 			path = Hype_NFT;
+			sourceTree = "<group>";
+		};
+		E2A946982A952D97005CF04E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E2A946882A950F95005CF04E /* LoginViewController.swift */,
+				E2A946992A952DAE005CF04E /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2A946892A950F95005CF04E /* ViewController.swift in Sources */,
+				E2A946892A950F95005CF04E /* LoginViewController.swift in Sources */,
 				E2A946852A950F95005CF04E /* AppDelegate.swift in Sources */,
+				E2A9469A2A952DAE005CF04E /* LoginView.swift in Sources */,
 				E2A946872A950F95005CF04E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
