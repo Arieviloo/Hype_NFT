@@ -10,7 +10,6 @@
 		E2A946852A950F95005CF04E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A946842A950F95005CF04E /* AppDelegate.swift */; };
 		E2A946872A950F95005CF04E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A946862A950F95005CF04E /* SceneDelegate.swift */; };
 		E2A946892A950F95005CF04E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A946882A950F95005CF04E /* ViewController.swift */; };
-		E2A9468C2A950F95005CF04E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A9468A2A950F95005CF04E /* Main.storyboard */; };
 		E2A9468E2A950F96005CF04E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A9468D2A950F96005CF04E /* Assets.xcassets */; };
 		E2A946912A950F96005CF04E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A9468F2A950F96005CF04E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		E2A946842A950F95005CF04E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A946862A950F95005CF04E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E2A946882A950F95005CF04E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E2A9468B2A950F95005CF04E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2A9468D2A950F96005CF04E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2A946902A950F96005CF04E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2A946922A950F96005CF04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 				E2A946842A950F95005CF04E /* AppDelegate.swift */,
 				E2A946862A950F95005CF04E /* SceneDelegate.swift */,
 				E2A946882A950F95005CF04E /* ViewController.swift */,
-				E2A9468A2A950F95005CF04E /* Main.storyboard */,
 				E2A9468D2A950F96005CF04E /* Assets.xcassets */,
 				E2A9468F2A950F96005CF04E /* LaunchScreen.storyboard */,
 				E2A946922A950F96005CF04E /* Info.plist */,
@@ -127,7 +124,6 @@
 			files = (
 				E2A946912A950F96005CF04E /* LaunchScreen.storyboard in Resources */,
 				E2A9468E2A950F96005CF04E /* Assets.xcassets in Resources */,
-				E2A9468C2A950F95005CF04E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +143,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E2A9468A2A950F95005CF04E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E2A9468B2A950F95005CF04E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E2A9468F2A950F96005CF04E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +280,7 @@
 				INFOPLIST_FILE = Hype_NFT/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -302,9 +290,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "jadie.Hype-NFT";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,7 +311,7 @@
 				INFOPLIST_FILE = Hype_NFT/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -330,9 +321,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "jadie.Hype-NFT";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
