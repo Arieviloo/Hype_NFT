@@ -15,6 +15,12 @@ class LoginView: UIView {
         return $0
     }(UIImageView())
     
+    lazy var logoImage: UIImageView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.image = UIImage(named: "BFLogin")
+        return $0
+    }(UIImageView())
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAddSubview()
@@ -27,6 +33,7 @@ class LoginView: UIView {
     
     private func setupAddSubview() {
         addSubview(backgroundImage)
+        addSubview(logoImage)
     }
     
     private func configConstraints() {
@@ -34,7 +41,12 @@ class LoginView: UIView {
             backgroundImage.topAnchor.constraint(equalTo: topAnchor),
             backgroundImage.bottomAnchor.constraint(equalTo: bottomAnchor),
             backgroundImage.leadingAnchor.constraint(equalTo: leadingAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: trailingAnchor)
+            backgroundImage.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            logoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            logoImage.heightAnchor.constraint(equalToConstant: 100),
+            logoImage.widthAnchor.constraint(equalToConstant: 100),
+            logoImage.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
 }
