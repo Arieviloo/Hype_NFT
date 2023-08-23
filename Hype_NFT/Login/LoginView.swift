@@ -44,7 +44,7 @@ class LoginView: UIView {
         $0.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0)
         $0.clipsToBounds = true
         $0.borderStyle = .roundedRect
-        $0.layer.cornerRadius = 12
+        $0.layer.cornerRadius = 10
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.white.cgColor
         $0.textColor = .white
@@ -61,7 +61,7 @@ class LoginView: UIView {
         $0.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0)
         $0.clipsToBounds = true
         $0.borderStyle = .roundedRect
-        $0.layer.cornerRadius = 12
+        $0.layer.cornerRadius = 10
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.white.cgColor
         $0.textColor = .white
@@ -75,6 +75,23 @@ class LoginView: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setTitle("Recuperar senha", for: .normal)
         $0.setTitleColor(UIColor(red: 231/255, green: 48/255, blue: 214/255, alpha: 1.0), for: .normal)
+        $0.addTarget(self, action: #selector(tappedRecoverPassordButton), for: .touchUpInside)
+        return $0
+    }(UIButton(type: .system))
+    
+    lazy var backgroundButtonLoginImage: UIImageView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.image = UIImage(named: "gradient3")
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
+        return $0
+    }(UIImageView())
+    
+    lazy var loginButton: UIButton = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setTitle("Entrar", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         $0.addTarget(self, action: #selector(tappedRecoverPassordButton), for: .touchUpInside)
         return $0
     }(UIButton(type: .system))
@@ -97,6 +114,8 @@ class LoginView: UIView {
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(recoverPasswordButton)
+        addSubview(backgroundButtonLoginImage)
+        addSubview(loginButton)
     }
     
     @objc func tappedRecoverPassordButton() {
@@ -132,7 +151,17 @@ class LoginView: UIView {
             passwordTextField.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
             
             recoverPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 5),
-            recoverPasswordButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor)
+            recoverPasswordButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
+            
+            backgroundButtonLoginImage.topAnchor.constraint(equalTo: recoverPasswordButton.bottomAnchor, constant: 20),
+            backgroundButtonLoginImage.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
+            backgroundButtonLoginImage.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
+            backgroundButtonLoginImage.heightAnchor.constraint(equalToConstant: 40),
+            
+            loginButton.topAnchor.constraint(equalTo: backgroundButtonLoginImage.topAnchor),
+            loginButton.leadingAnchor.constraint(equalTo: backgroundButtonLoginImage.leadingAnchor),
+            loginButton.trailingAnchor.constraint(equalTo: backgroundButtonLoginImage.trailingAnchor),
+            loginButton.heightAnchor.constraint(equalTo: backgroundButtonLoginImage.heightAnchor)
         ])
     }
 }
