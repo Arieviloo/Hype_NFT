@@ -87,13 +87,7 @@ class LoginView: UIView {
         $0.contentMode = .scaleToFill
         return $0
     }(UIImageView())
-    
-    lazy var lineView: UIView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = .white
-        return $0
-    }(UIView())
-    
+
     lazy var loginButton: UIButton = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setTitle("Entrar", for: .normal)
@@ -103,6 +97,34 @@ class LoginView: UIView {
         $0.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
         return $0
     }(UIButton(type: .system))
+    
+    lazy var lineView: UIView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = .white
+        return $0
+    }(UIView())
+    
+    lazy var metaMaskLoginButton: UIButton = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
+        $0.layer.borderColor = UIColor(red: 207/255, green: 0/255, blue: 192/255, alpha: 1.0).cgColor
+        $0.layer.borderWidth = 2
+        return $0
+    }(UIButton())
+    
+    lazy var iconMetaMaskLoginImage: UIImageView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.image = UIImage(named: "logo")
+        return $0
+    }(UIImageView())
+    
+    lazy var metaMaskLoginLabel: UILabel = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.text = "Entrar com o Metamask"
+        $0.textColor = .white
+        return $0
+    }(UILabel())
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -125,6 +147,9 @@ class LoginView: UIView {
         addSubview(backgroundButtonLoginImage)
         addSubview(loginButton)
         addSubview(lineView)
+        addSubview(metaMaskLoginButton)
+        metaMaskLoginButton.addSubview(iconMetaMaskLoginImage)
+        metaMaskLoginButton.addSubview(metaMaskLoginLabel)
     }
     
     @objc func tappedRecoverPassordButton() {
@@ -180,7 +205,20 @@ class LoginView: UIView {
             lineView.topAnchor.constraint(equalTo: backgroundButtonLoginImage.bottomAnchor, constant: 40),
             lineView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 60),
             lineView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -60),
-            lineView.heightAnchor.constraint(equalToConstant: 0.5)
+            lineView.heightAnchor.constraint(equalToConstant: 0.5),
+            
+            metaMaskLoginButton.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 40),
+            metaMaskLoginButton.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
+            metaMaskLoginButton.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
+            metaMaskLoginButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor),
+            
+            iconMetaMaskLoginImage.trailingAnchor.constraint(equalTo: metaMaskLoginLabel.leadingAnchor, constant: -10),
+            iconMetaMaskLoginImage.heightAnchor.constraint(equalToConstant: 20),
+            iconMetaMaskLoginImage.widthAnchor.constraint(equalToConstant: 20),
+            iconMetaMaskLoginImage.centerYAnchor.constraint(equalTo: metaMaskLoginButton.centerYAnchor),
+            
+            metaMaskLoginLabel.centerYAnchor.constraint(equalTo: iconMetaMaskLoginImage.centerYAnchor),
+            metaMaskLoginLabel.centerXAnchor.constraint(equalTo: metaMaskLoginButton.centerXAnchor)
         ])
     }
 }
