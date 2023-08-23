@@ -104,7 +104,7 @@ class LoginView: UIView {
         return $0
     }(UIView())
     
-    lazy var metataskLoginButton: UIButton = {
+    lazy var metaMaskLoginButton: UIButton = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
@@ -113,12 +113,18 @@ class LoginView: UIView {
         return $0
     }(UIButton())
     
-    lazy var iconMetataskLoginImage: UIImageView = {
+    lazy var iconMetaMaskLoginImage: UIImageView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.image = UIImage(named: "logo")
         return $0
     }(UIImageView())
     
+    lazy var metaMaskLoginLabel: UILabel = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.text = "Entrar com o Metamask"
+        $0.textColor = .white
+        return $0
+    }(UILabel())
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -141,8 +147,9 @@ class LoginView: UIView {
         addSubview(backgroundButtonLoginImage)
         addSubview(loginButton)
         addSubview(lineView)
-        addSubview(metataskLoginButton)
-        metataskLoginButton.addSubview(iconMetataskLoginImage)
+        addSubview(metaMaskLoginButton)
+        metaMaskLoginButton.addSubview(iconMetaMaskLoginImage)
+        metaMaskLoginButton.addSubview(metaMaskLoginLabel)
     }
     
     @objc func tappedRecoverPassordButton() {
@@ -200,15 +207,18 @@ class LoginView: UIView {
             lineView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -60),
             lineView.heightAnchor.constraint(equalToConstant: 0.5),
             
-            metataskLoginButton.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 40),
-            metataskLoginButton.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
-            metataskLoginButton.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
-            metataskLoginButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor),
+            metaMaskLoginButton.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 40),
+            metaMaskLoginButton.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
+            metaMaskLoginButton.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
+            metaMaskLoginButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor),
             
-            iconMetataskLoginImage.leadingAnchor.constraint(equalTo: metataskLoginButton.leadingAnchor, constant: 50),
-            iconMetataskLoginImage.heightAnchor.constraint(equalToConstant: 20),
-            iconMetataskLoginImage.widthAnchor.constraint(equalToConstant: 20),
-            iconMetataskLoginImage.centerYAnchor.constraint(equalTo: metataskLoginButton.centerYAnchor)
+            iconMetaMaskLoginImage.trailingAnchor.constraint(equalTo: metaMaskLoginLabel.leadingAnchor, constant: -10),
+            iconMetaMaskLoginImage.heightAnchor.constraint(equalToConstant: 20),
+            iconMetaMaskLoginImage.widthAnchor.constraint(equalToConstant: 20),
+            iconMetaMaskLoginImage.centerYAnchor.constraint(equalTo: metaMaskLoginButton.centerYAnchor),
+            
+            metaMaskLoginLabel.centerYAnchor.constraint(equalTo: iconMetaMaskLoginImage.centerYAnchor),
+            metaMaskLoginLabel.centerXAnchor.constraint(equalTo: metaMaskLoginButton.centerXAnchor)
         ])
     }
 }
