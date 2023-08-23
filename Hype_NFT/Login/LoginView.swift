@@ -71,6 +71,14 @@ class LoginView: UIView {
         return $0
     }(UITextField())
     
+    lazy var recoverPasswordButton: UIButton = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setTitle("Recuperar senha", for: .normal)
+        $0.setTitleColor(UIColor(red: 231/255, green: 48/255, blue: 214/255, alpha: 1.0), for: .normal)
+        $0.addTarget(self, action: #selector(tappedRecoverPassordButton), for: .touchUpInside)
+        return $0
+    }(UIButton(type: .system))
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAddSubview()
@@ -88,6 +96,11 @@ class LoginView: UIView {
         addSubview(subtitleLabel)
         addSubview(emailTextField)
         addSubview(passwordTextField)
+        addSubview(recoverPasswordButton)
+    }
+    
+    @objc func tappedRecoverPassordButton() {
+        print("\(#function) Recuperar senha")
     }
     
     private func configConstraints() {
@@ -109,14 +122,17 @@ class LoginView: UIView {
             subtitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             emailTextField.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 20),
-            emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
             emailTextField.heightAnchor.constraint(equalToConstant: 40),
             
             passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 8),
             passwordTextField.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
             passwordTextField.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
-            passwordTextField.heightAnchor.constraint(equalTo: emailTextField.heightAnchor)
+            passwordTextField.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
+            
+            recoverPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 5),
+            recoverPasswordButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor)
         ])
     }
 }
