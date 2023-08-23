@@ -113,11 +113,12 @@ class LoginView: UIView {
         return $0
     }(UIButton())
     
-    lazy var iconMetataskLoginButton: UIImageView = {
+    lazy var iconMetataskLoginImage: UIImageView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.image = UIImage(named: "logo")
         return $0
     }(UIImageView())
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -141,7 +142,7 @@ class LoginView: UIView {
         addSubview(loginButton)
         addSubview(lineView)
         addSubview(metataskLoginButton)
-        metataskLoginButton.addSubview(iconMetataskLoginButton)
+        metataskLoginButton.addSubview(iconMetataskLoginImage)
     }
     
     @objc func tappedRecoverPassordButton() {
@@ -204,10 +205,10 @@ class LoginView: UIView {
             metataskLoginButton.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
             metataskLoginButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor),
             
-            iconMetataskLoginButton.leadingAnchor.constraint(equalTo: metataskLoginButton.leadingAnchor, constant: 50),
-            iconMetataskLoginButton.heightAnchor.constraint(equalToConstant: 20),
-            iconMetataskLoginButton.widthAnchor.constraint(equalToConstant: 20),
-            iconMetataskLoginButton.centerYAnchor.constraint(equalTo: metataskLoginButton.centerYAnchor)
+            iconMetataskLoginImage.leadingAnchor.constraint(equalTo: metataskLoginButton.leadingAnchor, constant: 50),
+            iconMetataskLoginImage.heightAnchor.constraint(equalToConstant: 20),
+            iconMetataskLoginImage.widthAnchor.constraint(equalToConstant: 20),
+            iconMetataskLoginImage.centerYAnchor.constraint(equalTo: metataskLoginButton.centerYAnchor)
         ])
     }
 }
