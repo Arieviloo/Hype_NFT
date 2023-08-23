@@ -87,13 +87,7 @@ class LoginView: UIView {
         $0.contentMode = .scaleToFill
         return $0
     }(UIImageView())
-    
-    lazy var lineView: UIView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = .white
-        return $0
-    }(UIView())
-    
+
     lazy var loginButton: UIButton = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setTitle("Entrar", for: .normal)
@@ -103,6 +97,27 @@ class LoginView: UIView {
         $0.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
         return $0
     }(UIButton(type: .system))
+    
+    lazy var lineView: UIView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = .white
+        return $0
+    }(UIView())
+    
+    lazy var metataskLoginButton: UIButton = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
+        $0.layer.borderColor = UIColor(red: 207/255, green: 0/255, blue: 192/255, alpha: 1.0).cgColor
+        $0.layer.borderWidth = 2
+        return $0
+    }(UIButton())
+    
+    lazy var iconMetataskLoginButton: UIImageView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.image = UIImage(named: "logo")
+        return $0
+    }(UIImageView())
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -125,6 +140,8 @@ class LoginView: UIView {
         addSubview(backgroundButtonLoginImage)
         addSubview(loginButton)
         addSubview(lineView)
+        addSubview(metataskLoginButton)
+        metataskLoginButton.addSubview(iconMetataskLoginButton)
     }
     
     @objc func tappedRecoverPassordButton() {
@@ -180,7 +197,17 @@ class LoginView: UIView {
             lineView.topAnchor.constraint(equalTo: backgroundButtonLoginImage.bottomAnchor, constant: 40),
             lineView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 60),
             lineView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -60),
-            lineView.heightAnchor.constraint(equalToConstant: 0.5)
+            lineView.heightAnchor.constraint(equalToConstant: 0.5),
+            
+            metataskLoginButton.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 40),
+            metataskLoginButton.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
+            metataskLoginButton.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
+            metataskLoginButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor),
+            
+            iconMetataskLoginButton.leadingAnchor.constraint(equalTo: metataskLoginButton.leadingAnchor, constant: 50),
+            iconMetataskLoginButton.heightAnchor.constraint(equalToConstant: 20),
+            iconMetataskLoginButton.widthAnchor.constraint(equalToConstant: 20),
+            iconMetataskLoginButton.centerYAnchor.constraint(equalTo: metataskLoginButton.centerYAnchor)
         ])
     }
 }
