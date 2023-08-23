@@ -88,19 +88,25 @@ class LoginView: UIView {
         return $0
     }(UIImageView())
     
+    lazy var lineView: UIView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = .white
+        return $0
+    }(UIView())
+    
     lazy var loginButton: UIButton = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setTitle("Entrar", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         $0.titleLabel?.textAlignment = .center
-        $0.addTarget(self, action: #selector(tappedRecoverPassordButton), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
         return $0
     }(UIButton(type: .system))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAddSubview()
+        configSubview()
         configConstraints()
     }
     
@@ -108,7 +114,7 @@ class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupAddSubview() {
+    private func configSubview() {
         addSubview(backgroundImageView)
         addSubview(logoImageView)
         addSubview(titleLabel)
@@ -118,9 +124,14 @@ class LoginView: UIView {
         addSubview(recoverPasswordButton)
         addSubview(backgroundButtonLoginImage)
         addSubview(loginButton)
+        addSubview(lineView)
     }
     
     @objc func tappedRecoverPassordButton() {
+        print("\(#function) Recuperar senha")
+    }
+    
+    @objc func tappedLoginButton() {
         print("\(#function) Recuperar senha")
     }
     
@@ -163,7 +174,13 @@ class LoginView: UIView {
             loginButton.topAnchor.constraint(equalTo: backgroundButtonLoginImage.topAnchor),
             loginButton.leadingAnchor.constraint(equalTo: backgroundButtonLoginImage.leadingAnchor),
             loginButton.trailingAnchor.constraint(equalTo: backgroundButtonLoginImage.trailingAnchor),
-            loginButton.heightAnchor.constraint(equalTo: backgroundButtonLoginImage.heightAnchor)
+            loginButton.heightAnchor.constraint(equalTo: backgroundButtonLoginImage.heightAnchor),
+            loginButton.bottomAnchor.constraint(equalTo: backgroundButtonLoginImage.bottomAnchor),
+            
+            lineView.topAnchor.constraint(equalTo: backgroundButtonLoginImage.bottomAnchor, constant: 40),
+            lineView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 60),
+            lineView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -60),
+            lineView.heightAnchor.constraint(equalToConstant: 0.5)
         ])
     }
 }
