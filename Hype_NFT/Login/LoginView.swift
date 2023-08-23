@@ -84,6 +84,7 @@ class LoginView: UIView {
         $0.image = UIImage(named: "gradient3")
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
+        $0.contentMode = .scaleToFill
         return $0
     }(UIImageView())
     
@@ -92,6 +93,7 @@ class LoginView: UIView {
         $0.setTitle("Entrar", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        $0.titleLabel?.textAlignment = .center
         $0.addTarget(self, action: #selector(tappedRecoverPassordButton), for: .touchUpInside)
         return $0
     }(UIButton(type: .system))
