@@ -37,6 +37,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E269BBC72ACAFC4300ACE77E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E2A946842A950F95005CF04E /* AppDelegate.swift */,
+				E2A946862A950F95005CF04E /* SceneDelegate.swift */,
+				E2A9468D2A950F96005CF04E /* Assets.xcassets */,
+				E2A9468F2A950F96005CF04E /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E269BBC82ACAFC6500ACE77E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E2A946982A952D97005CF04E /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		E2A946782A950F95005CF04E = {
 			isa = PBXGroup;
 			children = (
@@ -56,11 +75,8 @@
 		E2A946832A950F95005CF04E /* Hype_NFT */ = {
 			isa = PBXGroup;
 			children = (
-				E2A946982A952D97005CF04E /* Login */,
-				E2A946842A950F95005CF04E /* AppDelegate.swift */,
-				E2A946862A950F95005CF04E /* SceneDelegate.swift */,
-				E2A9468D2A950F96005CF04E /* Assets.xcassets */,
-				E2A9468F2A950F96005CF04E /* LaunchScreen.storyboard */,
+				E269BBC72ACAFC4300ACE77E /* Resource */,
+				E269BBC82ACAFC6500ACE77E /* Scenes */,
 				E2A946922A950F96005CF04E /* Info.plist */,
 			);
 			path = Hype_NFT;
