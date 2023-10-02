@@ -170,6 +170,11 @@ class LoginView: UIView {
         delegate?.tappedLoginButton()
     }
     
+    func configTextFielDelegate(delegate: UITextFieldDelegate) {
+        emailTextField.delegate = delegate
+        passwordTextField.delegate = delegate
+    }
+    
     private func configConstraints() {
         NSLayoutConstraint.activate([
             backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
