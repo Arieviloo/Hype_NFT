@@ -18,10 +18,15 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loginView?.delegate(delegate: self)
         view.backgroundColor = .orange
     }
-
-
 }
 
+extension LoginViewController: LoginViewProtocol {
+    func tappedLoginButton() {
+        print(#function, "deu bom")
+    }
+    
+    
+}

@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol LoginViewProtocol: AnyObject {
+    func tappedLoginButton()
+}
+
 class LoginView: UIView {
+    
+    private weak var delegate: LoginViewProtocol?
+    
+    func delegate(delegate: LoginViewProtocol) {
+        self.delegate = delegate
+    }
     
     lazy var backgroundImageView: UIImageView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -157,7 +167,7 @@ class LoginView: UIView {
     }
     
     @objc func tappedLoginButton() {
-        print("\(#function) Recuperar senha")
+        delegate?.tappedLoginButton()
     }
     
     private func configConstraints() {
