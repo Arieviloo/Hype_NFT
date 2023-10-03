@@ -19,10 +19,34 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dismissKeyBoard()
+        isEnabledLoginButton(false)
         loginView?.delegate(delegate: self)
         loginView?.configTextFielDelegate(delegate: self)
         view.backgroundColor = .orange
+       
     }
+    
+    func validateTextFields() {
+        if (loginView?.emailTextField.text ?? "").isValid(validType: .email) && (loginView?.passwordTextField.text ?? "").isValid(validType: .password) {
+            isEnabledLoginButton(true)
+        } else {
+            isEnabledLoginButton(false)
+        }
+    }
+    
+    func isEnabledLoginButton(_ isEnabled: Bool) {
+        if isEnabled {
+            loginView?.loginButton.setTitleColor(.white, for: .normal)
+            loginView?.loginButton.isEnabled = true
+            loginView?.backgroundButtonLoginImage.alpha = 1
+        } else {
+            loginView?.loginButton.setTitleColor(.lightGray, for: .normal)
+            loginView?.loginButton.isEnabled = false
+            loginView?.backgroundButtonLoginImage.alpha = 0.4
+        }
+    }
+    
+    
 }
 
 extension LoginViewController: LoginViewProtocol {
@@ -67,6 +91,8 @@ extension LoginViewController: UITextFieldDelegate {
                 break
             }
         }
+        
+        validateTextFields()
     }
 }
 
